@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to DOM</title>
     <link rel="stylesheet" href="/style/styles.css">
+    <style>
+        .fruits-container li{
+            color: brown;
+        }
+    </style>
 </head>
 <body>
       <main>
@@ -26,6 +31,16 @@
         <li>DOM de re baba</li>
     </ul>
        </section>
+    </section>
+    <section class="fruits-container">
+     <h1 id="fruits-title">Fruits I tested</h1>
+     <ul>
+     <li class="fruits">Mangoe</li>
+     <li class="fruits">Banana</li>
+     <li class="fruits">Apple</li>
+     <li>Orange</li>
+ </ul>
+    </section>
       </main>
       <script src="/js/dom.js"></script>
       <script>
@@ -33,6 +48,22 @@
         for(const li of liCollection){
             console.log(li.innerText);
         }
+        const fruitsTitle = document.getElementById('fruits-title');
+        fruitsTitle.innerText='Fruits Change By JS'
+
+        const fruit = document.getElementsByClassName('fruits');
+        for(const fruits of fruit){
+            console.log(fruits.innerText);
+        }
+
+        const someli = document.querySelector('.fruits-container');
+        console.log(someli);
+
+        const someLi = document.querySelectorAll('.fruits-container li')
+        for(const li of someLi){
+            console.log(li.innerText)
+        }
+
       </script>
 </body>
 </html>
